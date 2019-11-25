@@ -13,6 +13,9 @@ up:
 db:
 	docker-compose up -d postgres
 
+frontend:
+	docker-compose up -d frontend
+
 format:
 	black instagram-backend --skip-string-normalization
 
