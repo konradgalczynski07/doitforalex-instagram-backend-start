@@ -16,7 +16,10 @@ services:
     depends_on:
       - postgres
     command: >
-      bash -c "python instagram-backend/manage.py runserver 0.0.0.0:8000"
+      bash -c "python wait_for_postgres.py &&
+               python instagram-backend/manage.py collectstatic --noinput &&
+               python instagram-backend/manage.py migrate &&
+               python instagram-backend/manage.py runserver 0.0.0.0:8000"
 
   frontend:
     container_name: instagram-frontend
