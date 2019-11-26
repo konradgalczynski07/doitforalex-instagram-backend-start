@@ -33,13 +33,13 @@ If all above steps are completed successfully you are ready to develop using Doc
 
 **However to better experience we advice you** to develop locally using dockerized db and frontend running and start Django on your local machine with virtualenv. To do that: 
 
-5. Change *DB_HOST* and *DATABASE_URL* env vars to use your localhost. Simply uncommment them out like so:
+5. Change *POSTGRES_HOST* and *DATABASE_URL* env vars to use your localhost. Simply uncommment them out like so:
 
 ```
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/instagram
 # DATABASE_URL=postgres://postgres:postgres@instagram-postgres:5432/instagram
-DB_HOST=localhost
-# DB_HOST=instagram-postgres
+POSTGRES_HOST=localhost
+# POSTGRES_HOST=instagram-postgres
 ```
 
 8. Export .env file or add it to your workspace config
