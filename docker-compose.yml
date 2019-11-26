@@ -24,6 +24,8 @@ services:
   frontend:
     container_name: instagram-frontend
     image: konradgalczynski07/ig-frontend:latest
+    volumes:
+      - .:/app
     ports:
       - "3000:3000"
       
