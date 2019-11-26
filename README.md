@@ -70,7 +70,7 @@ docker-compose up -d postgres frontend
 9. Run local server
 
 ```
-python manage.py runserver
+python instagram-backend/manage.py runserver
 ```
 
 10. Open you localhost:3000 and localhost:8000 in browser and check out it works. 
@@ -95,7 +95,7 @@ make frontend
 docker-compose up -d frontend
 ```
 
-To check out full list familiarize yourself with *Makefile*
+To check out full list and familiarize yourself with *Makefile*
 
 
 ## Happy coding !
