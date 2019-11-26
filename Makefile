@@ -17,7 +17,7 @@ frontend:
 	docker-compose up -d frontend
 
 format:
-	black instagram-backend --skip-string-normalization
+	black instagram-backend --skip-string-normalization --exclude=migrations
 
 # This commands might not work properly, I place it here so that you could easy look them up
 activate:
