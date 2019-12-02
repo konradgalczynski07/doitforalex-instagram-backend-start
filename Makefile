@@ -11,17 +11,17 @@ up:
 	docker-compose up
 
 db:
-	docker-compose up -d postgres
+	docker-compose up postgres
 
 frontend:
-	docker-compose up -d frontend
+	docker-compose up frontend
 
 format:
 	black instagram-backend --skip-string-normalization --exclude=migrations
 
 # This commands might not work properly, I place it here so that you could easy look them up
 activate:
-	source venv/bin/activate
+	bash -c "venv/bin/activate"
 
 environ:
-	set -o allexport; source .env; set +o allexport;
+	bash -c "set -o allexport; source .env; set +o allexport;"
