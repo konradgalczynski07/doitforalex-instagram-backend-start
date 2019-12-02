@@ -3,23 +3,23 @@ volumes:
   postgres_volume:
 
 services:
-  backend:
-    container_name: instagram-backend
-    build:
-      context: .
-    volumes:
-    - .:/app
-    env_file:
-      - .env
-    ports:
-      - "8000:8000"
-    depends_on:
-      - postgres
-    command: >
-      bash -c "python wait_for_postgres.py &&
-               python instagram-backend/manage.py collectstatic --noinput &&
-               python instagram-backend/manage.py migrate &&
-               python instagram-backend/manage.py runserver 0.0.0.0:8000"
+  # This is here for your reference if you ever want to run backend in the container (remember to change POSTGRES_HOST in .env file)
+  # backend:
+  #   container_name: instagram-backend
+  #   build:
+  #     context: .
+  #   volumes:
+  #   - .:/app
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "8000:8000"
+  #   depends_on:
+  #     - postgres
+  #   command: >
+  #     bash -c "python instagram-backend/manage.py collectstatic --noinput &&
+  #              python instagram-backend/manage.py migrate &&
+  #              python instagram-backend/manage.py runserver 0.0.0.0:8000"
 
   frontend:
     container_name: instagram-frontend
