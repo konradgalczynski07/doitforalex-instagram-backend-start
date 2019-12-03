@@ -50,9 +50,11 @@ pip install -r requirements.txt
 docker-compose up
 ```
 
-8. Run local server
+8. Run collectstatic, migrate and then local server
 
 ```
+python instagram-backend/manage.py collectstatic
+python instagram-backend/manage.py migrate
 python instagram-backend/manage.py runserver
 ```
 
