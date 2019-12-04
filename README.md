@@ -10,13 +10,19 @@ Instagram REST API with basic features real Instagram has.
 git clone https://github.com/konradgalczynski07/doitforalex-instagram-backend-start
 ```
 
-2. Then open terminal in code editor to create .env file by copying .env_example
+2. Open terminal and run db and frontend provided with docker-compose
+
+```
+docker-compose up
+```
+
+3. Then open another terminal and create .env file by copying .env_example
 
 ```
 cp .env_example .env 
 ```
 
-3. Set required env variables in .env file
+4. Set required env variables in .env file
 
 ```
 SECRET_KEY=test
@@ -25,29 +31,23 @@ ALLOWED_HOSTS=*
 CORS_ORIGIN_WHITELIST=http://localhost:3000
 ```
 
-4. Export .env vars
+5. Export .env vars
 
 ```
 set -o allexport; source .env; set +o allexport;
 ```
 
-5. Now create and activate your local venv
+6. Now create and activate your local venv
 
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-6. Install dependencies
+7. Install dependencies
 
 ```
 pip install -r requirements.txt
-```
-
-7. Run db and frontend provided with docker-compose
-
-```
-docker-compose up
 ```
 
 8. Run collectstatic, migrate and then local server
