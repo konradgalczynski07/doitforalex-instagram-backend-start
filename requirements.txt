@@ -1,4 +1,4 @@
-django  # https://www.djangoproject.com/
+django==2.2.8  # https://www.djangoproject.com/
 djangorestframework  # https://github.com/encode/django-rest-framework
 django-cors-headers  # https://github.com/adamchainz/django-cors-headers
 djangorestframework-jwt  # https://github.com/jpadilla/django-rest-framework-jwt
