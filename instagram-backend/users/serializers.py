@@ -43,3 +43,24 @@ class UserSerializer(serializers.ModelSerializer):
             user.save()
 
         return user
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    followed_by_req_user = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = (
+            'id',
+            'username',
+            'fullname',
+            'bio',
+            'profile_pic',
+            'number_of_followers',
+            'number_of_following',
+            'followed_by_req_user',
+        )
+
+    def get_followed_by_req_user(self, obj):
+        user = self.context['request'].user
+        return user in obj.followers.all()
