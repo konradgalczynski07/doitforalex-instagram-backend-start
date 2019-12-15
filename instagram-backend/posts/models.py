@@ -24,3 +24,20 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.author}\'s post'
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='post_comments'
+    )
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_comments'
+    )
+    text = models.CharField(max_length=100)
+    posted_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-posted_on']
+
+    def __str__(self):
+        return f'{self.author}\'s comment'
